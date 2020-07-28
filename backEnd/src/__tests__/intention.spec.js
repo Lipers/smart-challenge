@@ -9,7 +9,7 @@ describe("Intention", () => {
 
   it("should create a new intention", async () => {
     const response = await request(app).post("/intention").send({
-      uuid: "36cd6b15-212b-4546-aef2-66902e18da17",
+      uuid: "36cd6515-212b-4546-eef2-66902e18da16",
       zipcode_start: 14095144,
       zipcode_end: 4120132,
       lead: false,

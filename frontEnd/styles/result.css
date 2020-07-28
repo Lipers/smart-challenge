@@ -1,0 +1,54 @@
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, minmax(100px, 1fr));
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-box {
+  padding: 15.6px;
+}
+
+.bot-box {
+  margin-top: 20px;
+  padding: 20px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 24px;
+}
+
+.col2-bot-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.btn-result {
+  font-size: 14px;
+  margin: 0;
+  border-radius: 3px;
+  width: 150px;
+  height: 40px;
+}
+
+.nova-cotacao {
+  margin-top: 5px;
+  text-decoration: underline;
+}
+
+.saldo-result {
+  margin-top: 5px;
+  font-size: 13px;
+}

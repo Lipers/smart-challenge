@@ -32,7 +32,7 @@ const sendEmail = (email, lead) => {
   transporter
     .sendMail({
       from: "Smart Challenge <smart.challenge.felipe@gmail.com>",
-      to: ["lipers20@hotmail.com"],
+      to: ["sdr@smartenvios.com"],
       subject: "Lead",
       text: JSON.stringify(lead),
     })

@@ -9,10 +9,10 @@ describe("Customer", () => {
 
   it("should create a new customer", async () => {
     const response = await request(app).post("/customer").send({
-      email: "lipers20@hotmail.com",
+      email: "lipers23@hotmail.com",
       company: "smart",
       cell_phone: "123789",
-      cnpj: "12378945622",
+      cnpj: "12372745625",
     });
 
     expect(response.body.customer).toHaveProperty("email");

@@ -5,9 +5,9 @@ module.exports = {
     try {
       const intention = await Intention.create(req.body);
 
-      return res.status(200).send({ intention });
+      return res.status(200).json({ intention });
     } catch (error) {
-      return res.status(400).send({ error: "Registration Failed!:" + error });
+      return res.status(400).json({ error: "Registration Failed!:" + error });
     }
   },
 
@@ -19,9 +19,9 @@ module.exports = {
 
       const [intention] = await Intention.find({ uuid: uuid });
 
-      return res.status(200).send(intention);
+      return res.status(200).json(intention);
     } catch (error) {
-      return res.status(400).send("Error intention update!:" + error);
+      return res.status(400).json("Error intention update!:" + error);
     }
   },
 };
