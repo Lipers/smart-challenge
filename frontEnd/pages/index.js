@@ -52,22 +52,36 @@ const Home = () => {
   }
 
   return (
-    <div className="container main" style={{ wordBreak: "break-all" }}>
+    <div
+      className="container"
+      style={{
+        wordBreak: "break-all",
+        padding: "60px",
+      }}
+    >
       <Head>
         <title>Smart Envios</title>
-        <meta property="og:title" content="My page title" key="title" />
+        <meta
+          property="og:title"
+          content="Smart Envios Frete inteligente"
+          key="title"
+        />
       </Head>
       <div className="center" style={{ marginBottom: "20px" }}>
         <Logo />
       </div>
 
-      <p className="center text-blue text-space">
-        Descubra como é <b>fácil enviar</b> suas
-        <b> encomendas</b> através da<b> SMART</b>
-        <b className="text-orange"> ENVIOS</b>
-      </p>
-      <Row gutter={[30, 30]}>
-        <Col span={6}>
+      <div id="wrap-title">
+        <span className="title center text-blue text-space">
+          Descubra como é <b>fácil enviar</b> suas
+        </span>
+        <span className="title center text-blue text-space">
+          <b> encomendas</b> através da<b> SMART</b>
+          <b className="text-orange"> ENVIOS</b>
+        </span>
+      </div>
+      <div id="card-group">
+        <div className="card">
           <div className="border-lift box" style={{ minHeight: "185px" }}>
             <b className="text-orange text-subtitle">Marketplace de frete</b>
             <p className="text-blue ">
@@ -76,17 +90,17 @@ const Home = () => {
               check-out de sua loja.
             </p>
           </div>
-        </Col>
-        <Col span={6}>
+        </div>
+        <div className="card">
           <div className="border-lift box" style={{ minHeight: "185px" }}>
             <b className="text-orange text-subtitle ">Smart Coleta</b>
             <p className="text-blue">
               <b>Coletores&nbsp;</b> credenciados retiram diariamente as suas
-              encomendas e levam até os <b>&nbsp;transportadores</b>
+              encomendas e levam até os <b>&nbsp;transportadores.</b>
             </p>
           </div>
-        </Col>
-        <Col span={6}>
+        </div>
+        <div className="card">
           <div className="border-lift box" style={{ minHeight: "185px" }}>
             <b className="text-orange text-subtitle ">Acompanhamento</b>
             <p className="text-blue">
@@ -95,8 +109,8 @@ const Home = () => {
               SmartEnvios
             </p>
           </div>
-        </Col>
-        <Col span={6}>
+        </div>
+        <div className="card">
           <div className="border-lift box" style={{ minHeight: "185px" }}>
             <b className="text-orange text-subtitle">O destinatário recebe</b>
             <p className="text-blue">
@@ -105,105 +119,102 @@ const Home = () => {
               <b>&nbsp;seu cliente</b>.
             </p>
           </div>
-        </Col>
-      </Row>
+        </div>
+      </div>
 
-      <Row gutter={[30, 30]}>
-        <Col span={5}>
+      <Row gutter={[30, 30]} id="form-group">
+        <Col span={5} id="woman">
           <Woman />
         </Col>
-        <Col span={14}>
-          <div className="center">
-            <Col span={12}>
-              <Row gutter={[30, 30]}>
-                <b className="text-blue" style={{ marginBottom: "10px" }}>
-                  De
-                </b>
-                <input
-                  onChange={(e) => setCepStart(e.target.value)}
-                  placeholder="Digite o CEP do endereço de coleta"
-                  type="text"
-                  name="de"
-                  className="border-lift input-first"
-                  style={{ width: "100%", textDecorationColor: "white" }}
-                />
-              </Row>
-            </Col>
-            <Col span={12}>
-              <Row gutter={[30, 30]}>
-                <b
-                  className="text-blue"
-                  style={{ marginBottom: "10px", marginLeft: "10px" }}
-                >
-                  Para
-                </b>
-                <input
-                  onChange={(e) => setCepEnd(e.target.value)}
-                  placeholder="Digite o CEP de destino da encomenda"
-                  type="text"
-                  name="de"
-                  className="border-lift input-first"
-                  style={{ width: "100%", marginLeft: "10px" }}
-                />
-              </Row>
-            </Col>
+        <Col span={14} style={{ marginLeft: "25px" }} id="form">
+          <div id="de-para">
+            <div id="de">
+              <b className="text-blue">De</b>
+              <input
+                onChange={(e) => setCepStart(e.target.value)}
+                placeholder="Digite o CEP do endereço de coleta"
+                type="text"
+                name="de"
+                className="border-lift input-first"
+                style={{
+                  width: "100%",
+                  marginTop: "10px",
+                }}
+              />
+            </div>
+
+            <div id="para">
+              <b className="text-blue">Para</b>
+              <input
+                onChange={(e) => setCepEnd(e.target.value)}
+                placeholder="Digite o CEP de destino da encomenda"
+                type="text"
+                name="para"
+                className="border-lift input-first"
+                style={{ width: "100%", marginTop: "10px" }}
+              />
+            </div>
           </div>
 
-          <div style={{ marginLeft: "10px" }}>
+          <div>
             <Row gutter={[30, 30]}>
               <b
                 className="text-blue"
                 style={{
                   marginTop: "10px",
                   marginBottom: "10px",
-                  marginLeft: "5px",
+                  marginLeft: "15px",
                 }}
               >
                 Detalhes da encomenda
               </b>
             </Row>
-            <Row gutter={[15, 15]}>
-              <main className="border-lift center" style={{ padding: 10 }}>
-                <Col span={4}>
-                  <Row>
-                    <b className="text-blue">largura</b>
-                  </Row>
+            <main id="main-form" className="border-lift center">
+              <div className="row">
+                <div className="input" style={{ maxWidth: "110px" }}>
+                  <p className="text-blue">
+                    <b>largura</b>
+                  </p>
 
-                  <Row>
-                    <input
-                      onChange={(e) => setLargura(e.target.value)}
-                      placeholder="L"
-                      className="input-bottom"
-                      type="text"
-                    />
-                  </Row>
-                </Col>
-                <Col span={4}>
-                  <Row>
-                    <b className="text-blue">altura</b>
-                  </Row>
+                  <input
+                    onChange={(e) => setLargura(e.target.value)}
+                    placeholder="L"
+                    className="input-bottom"
+                    type="text"
+                    style={{
+                      width: "100%",
+                    }}
+                  />
+                </div>
+                <div className="input" style={{ maxWidth: "90px" }}>
+                  <p className="text-blue">
+                    <b>altura</b>
+                  </p>
 
-                  <Row>
-                    <input
-                      onChange={(e) => setAltura(e.target.value)}
-                      placeholder="A"
-                      className="input-bottom"
-                      type="text"
-                    />
-                  </Row>
-                </Col>
-                <Col span={5}>
-                  <Row>
-                    <b className="text-blue">comprimento</b>
-                  </Row>
+                  <input
+                    onChange={(e) => setAltura(e.target.value)}
+                    placeholder="A"
+                    className="input-bottom"
+                    type="text"
+                    style={{
+                      width: "100%",
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="input" style={{ maxWidth: "210px" }}>
+                  <p className="text-blue">
+                    <b>comprimento</b>
+                  </p>
 
-                  <Row>
+                  <div className="row">
                     <input
                       onChange={(e) => setComprimento(e.target.value)}
                       placeholder="C"
                       className="input-bottom"
                       type="text"
-                      style={{ width: "70%" }}
+                      style={{ width: "75%" }}
                     />
                     <span
                       style={{
@@ -214,20 +225,21 @@ const Home = () => {
                     >
                       cm
                     </span>
-                  </Row>
-                </Col>
-                <Col span={5}>
-                  <Row>
-                    <b className="text-blue">peso</b>
-                  </Row>
+                  </div>
+                </div>
 
-                  <Row>
+                <div className="input">
+                  <p className="text-blue">
+                    <b>peso</b>
+                  </p>
+
+                  <div className="row">
                     <input
                       onChange={(e) => setPeso(e.target.value)}
-                      style={{ width: "70%" }}
                       placeholder="do pacote"
                       className="input-bottom"
                       type="text"
+                      style={{ width: "80%" }}
                     />
                     <span
                       style={{
@@ -238,38 +250,125 @@ const Home = () => {
                     >
                       kg
                     </span>
-                  </Row>
-                </Col>
-                <Col span={5}>
-                  <Row>
-                    <b className="text-blue">valor do produto</b>
-                  </Row>
-
-                  <Row>
-                    <input
-                      onChange={(e) => setValor(e.target.value)}
-                      placeholder="valor do pacote"
-                      className="input-bottom"
-                      type="text"
-                    />
-                  </Row>
-                </Col>
-              </main>
-
-              <section>
-                <div className="partners">
-                  <p>Alguns de nossos parceiros logísticos</p>
-                  <Partners />
+                  </div>
                 </div>
 
-                <button onClick={handleIntention}>
-                  Econtrar o melhor frete
-                </button>
-              </section>
-            </Row>
+                <div className="input">
+                  <p>
+                    <b className="text-blue">valor do produto</b>
+                  </p>
+
+                  <input
+                    onChange={(e) => setValor(e.target.value)}
+                    placeholder="valor do pacote"
+                    className="input-bottom"
+                    type="text"
+                  />
+                </div>
+              </div>
+            </main>
+
+            <main id="main-form-mobile" className="border-lift center">
+              <div className="row">
+                <div className="input">
+                  <p className="text-blue">
+                    <b>peso</b>
+                  </p>
+
+                  <div className="row">
+                    <input
+                      onChange={(e) => setPeso(e.target.value)}
+                      placeholder="do pacote"
+                      className="input-bottom"
+                      type="text"
+                      style={{ width: "80%" }}
+                    />
+                    <span
+                      style={{
+                        display: "flex",
+                        alignItems: "center",
+                        marginLeft: "5px",
+                      }}
+                    >
+                      kg
+                    </span>
+                  </div>
+                </div>
+
+                <div className="input">
+                  <p>
+                    <b className="text-blue">valor do produto</b>
+                  </p>
+
+                  <input
+                    onChange={(e) => setValor(e.target.value)}
+                    placeholder="valor do pacote"
+                    className="input-bottom"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div className="row">
+                <div className="input" style={{ maxWidth: "110px" }}>
+                  <p className="text-blue">
+                    <b>largura</b>
+                  </p>
+
+                  <input
+                    onChange={(e) => setLargura(e.target.value)}
+                    placeholder="L"
+                    className="input-bottom"
+                    type="text"
+                    style={{
+                      width: "100%",
+                    }}
+                  />
+                </div>
+                <div className="input" style={{ maxWidth: "130px" }}>
+                  <p className="text-blue">
+                    <b>altura</b>
+                  </p>
+
+                  <input
+                    onChange={(e) => setAltura(e.target.value)}
+                    placeholder="A"
+                    className="input-bottom"
+                    type="text"
+                    style={{
+                      width: "100%",
+                    }}
+                  />
+                </div>
+                <div className="input">
+                  <p className="text-blue">
+                    <b>comprimento</b>
+                  </p>
+
+                  <div className="row">
+                    <input
+                      onChange={(e) => setComprimento(e.target.value)}
+                      placeholder="C"
+                      className="input-bottom"
+                      type="text"
+                      style={{ width: "100%" }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </main>
+            <section>
+              <div className="partners">
+                <p>Alguns de nossos parceiros logísticos</p>
+                <Partners />
+              </div>
+
+              <button id="frete" onClick={handleIntention}>
+                Econtrar o melhor frete
+              </button>
+            </section>
           </div>
         </Col>
-        <Col>
+        <Col span={1} id="box">
           <Box style={{ marginTop: "110px" }} />
         </Col>
       </Row>

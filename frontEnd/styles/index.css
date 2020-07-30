@@ -1,6 +1,9 @@
-.main {
-  padding: 10px;
+body {
   background-color: #f4f5f9;
+}
+
+.container {
+  padding: 1;
 }
 
 .center {
@@ -53,11 +56,27 @@ input {
   color: #2b4873;
 }
 
-main {
+#main-form,
+#main-form-mobile {
   margin-right: 20px;
   width: 100%;
   display: flex;
   flex-direction: row;
+  padding: 30px;
+}
+
+.row {
+  margin: 0 auto;
+  display: flex;
+}
+
+.input {
+  padding: 0 10px;
+  /* width: 50px !important; */
+}
+
+.input input {
+  width: 100%;
 }
 
 .input-bottom {
@@ -89,13 +108,143 @@ button {
   background-color: #ff830b !important;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
   border-radius: 5px;
-  font-size: 16px;
   font-weight: 700;
   height: 50px;
   margin-top: 10px;
+  font-size: 100%;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .partners {
   display: flex;
   flex-direction: column;
+}
+
+#card-group {
+  display: flex;
+}
+
+.card {
+  width: 100%;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 380px) {
+  .input p {
+    font-size: 3.6vw;
+  }
+}
+
+@media (max-width: 1289px) {
+  #woman {
+    display: none;
+  }
+  #box {
+    display: none;
+  }
+  #form-group {
+    display: flex;
+    justify-content: center !important;
+  }
+}
+
+@media (max-width: 1192px) {
+  #card-group {
+    flex-direction: column;
+  }
+
+  .card {
+    padding-bottom: 0 !important;
+    max-width: 80vw !important;
+    margin: 0 auto;
+  }
+
+  .box {
+    min-height: 0 !important;
+    padding-bottom: 8px !important;
+  }
+
+  .container {
+    padding: 0 !important;
+  }
+
+  #de-para {
+    flex-direction: column;
+    padding: 0 !important;
+  }
+
+  #de {
+    width: 100% !important;
+  }
+  #para {
+    margin-top: 10px;
+    width: 100% !important;
+  }
+  #form {
+    display: flex;
+    max-width: 80vw !important;
+    flex-direction: column;
+    margin: 0 !important;
+    padding: 0 !important;
+    flex: none;
+  }
+
+  .title {
+    font-size: 4vw !important;
+    word-break: break-all !important;
+  }
+
+  #wrap-title {
+    flex-direction: column;
+  }
+
+  #main-form {
+    display: none;
+  }
+
+  #main-form-mobile {
+    display: flex !important;
+    flex-direction: column;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .partners {
+    display: none;
+  }
+
+  #frete {
+    margin: 0 auto;
+  }
+}
+
+#de-para {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+#de {
+  width: 45%;
+}
+
+#para {
+  width: 45%;
+}
+
+.title {
+  word-break: break-all;
+}
+
+#wrap-title {
+  display: flex;
+  justify-content: center;
+}
+
+#main-form-mobile {
+  display: none;
 }
