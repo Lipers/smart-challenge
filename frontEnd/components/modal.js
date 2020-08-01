@@ -9,6 +9,9 @@ export default function Model() {
   const [tel, setTel] = useState(0);
   const [email, setEmail] = useState("");
 
+  const handleCloseModal = (e) => {
+    if (e.target.id === "modal") e.target.style.display = "none";
+  };
   const handleNewLead = async (e) => {
     e.preventDefault();
 
@@ -56,90 +59,83 @@ export default function Model() {
   };
 
   return (
-    <div id="modal" style={{ display: "none" }}>
-      <div>
-        <form onSubmit={handleNewLead} className="border-lift box">
-          <Row>
-            <p className="text-orange" style={{ fontSize: "18px" }}>
-              <b className="text-orange">Legal!&nbsp;</b>
-              <span className="text-blue">
-                Você está a poucos cliques de enviar sua encomenda através da
-                <b className="text-blue">&nbsp;SMART</b>
-                <b className="text-orange">ENVIOS</b>
-              </span>
-            </p>
-          </Row>
-
-          <Row>
-            <b className="text-blue">Empresa</b>
-          </Row>
-          <Row>
-            <input
-              onChange={(e) => setEmpresa(e.target.value)}
-              style={{ width: "100%" }}
-              className="border-lift "
-              placeholder="Digite o nome da sua empresa"
-              type="text"
-              name="empresa"
-            />
-          </Row>
-          <Row>
-            <Col span={13}>
-              <Row>
-                <b className="text-blue">CNPJ</b>
-              </Row>
-              <Row style={{ marginTop: "10px" }}>
-                <input
-                  onChange={(e) => setCnpj(e.target.value)}
-                  style={{ width: "90%" }}
-                  className="border-lift"
-                  placeholder="Digite o CNPJ da sua empresa"
-                  type="text"
-                  name="empresa"
-                />
-              </Row>
-            </Col>
-            <Col span={11}>
-              <Row>
-                <b className="text-blue">Telefone</b>
-              </Row>
-              <Row style={{ marginTop: "10px" }}>
-                <input
-                  onChange={(e) => setTel(e.target.value)}
-                  style={{ width: "100%" }}
-                  className="border-lift "
-                  placeholder="Digite o seu telefone"
-                  type="text"
-                  name="empresa"
-                />
-              </Row>
-            </Col>
-          </Row>
-          <Row style={{ marginTop: "10px" }}>
-            <b className="text-blue">Digite seu e-mail</b>
-          </Row>
-          <Row>
-            <input
-              onChange={(e) => setEmail(e.target.value)}
-              style={{ width: "100%" }}
-              className="border-lift"
-              placeholder="Digite seu e-mail"
-              type="email"
-              name="empresa"
-            />
-          </Row>
-          <Row
-            style={{
-              display: "flex",
-              justifyContent: "center",
-            }}
+    <div id="modal" style={{ display: "none" }} onClick={handleCloseModal}>
+      <form onSubmit={handleNewLead} className="border-lift box">
+        <Row>
+          <p
+            id="modal-title"
+            className="text-orange"
+            style={{ fontSize: "20.5px" }}
           >
-            <button type="submit" className="border-lift">
-              <b>Conhecer opções de Frete</b>
-            </button>
-          </Row>
-        </form>
-      </div>
+            <b className="text-orange">Legal!&nbsp;</b>
+            <span className="text-blue">
+              Você está a poucos cliques de enviar sua encomenda através da
+              <b className="text-blue">&nbsp;SMART</b>
+              <b className="text-orange">ENVIOS</b>
+            </span>
+          </p>
+        </Row>
+
+        <Row>
+          <b className="text-blue">Empresa</b>
+        </Row>
+        <Row>
+          <input
+            onChange={(e) => setEmpresa(e.target.value)}
+            className="border-lift modal-input"
+            placeholder="Digite o nome da sua empresa"
+            type="text"
+            name="empresa"
+          />
+        </Row>
+        <div id="cnpj-tel">
+          <div>
+            <Row>
+              <b className="text-blue">CNPJ</b>
+            </Row>
+            <Row style={{ marginTop: "10px" }}>
+              <input
+                onChange={(e) => setCnpj(e.target.value)}
+                className="border-lift modal-input"
+                placeholder="Digite o CNPJ da sua empresa"
+                type="text"
+                name="cnpj"
+              />
+            </Row>
+          </div>
+          <div>
+            <Row>
+              <b className="text-blue">Telefone</b>
+            </Row>
+            <Row style={{ marginTop: "10px" }}>
+              <input
+                onChange={(e) => setTel(e.target.value)}
+                className="border-lift modal-input"
+                placeholder="Digite o seu telefone"
+                type="text"
+                name="telefone"
+              />
+            </Row>
+          </div>
+        </div>
+        <Row style={{ marginTop: "10px" }}>
+          <b className="text-blue">Digite seu e-mail</b>
+        </Row>
+        <Row>
+          <input
+            onChange={(e) => setEmail(e.target.value)}
+            className="border-lift modal-input"
+            placeholder="Digite seu e-mail"
+            type="email"
+            name="email"
+          />
+        </Row>
+        <Row className="center">
+          <button id="frete" type="submit" className="border-lift">
+            <b>Conhecer opções de Frete</b>
+          </button>
+        </Row>
+      </form>
     </div>
   );
 }

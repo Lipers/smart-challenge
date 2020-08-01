@@ -6,9 +6,6 @@
   bottom: 0;
   right: 0;
   left: 0;
-  display: flex;
-  justify-content: center;
-  transition: 400ms;
 }
 
 #modal.addScroll {
@@ -18,11 +15,11 @@
 #modal form {
   padding: 35px;
   background-color: #f4f5f9;
-  width: 70%;
+  width: 37%;
   max-width: 800px;
   margin: 80px auto;
   display: grid;
-  gap: 20px;
+  gap: 10px;
 }
 
 input::placeholder {
@@ -30,6 +27,7 @@ input::placeholder {
 }
 
 button {
+  font-size: 15px;
   width: 300px;
   border: none;
   outline: none;
@@ -37,59 +35,41 @@ button {
   color: #fff;
   background-color: #ff830b;
 }
-/* 
-form input,
-form textarea {
-  width: 100%;
-  padding: 12px;
-  box-sizing: border-box;
-  border-radius: 6px;
-  border: 1px solid rgba(141, 25, 52, 0.5);
-  outline: none;
-}
 
-form label {
-  font-weight: 600;
-  line-height: 32px;
-  letter-spacing: 0.8px;
-}
-
-form a {
-  width: 150px;
-  height: 40px;
-  background-color: #ffffff22;
-  color: white;
+.row-modal {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  align-self: end;
-  border-radius: 6px;
-  font-size: 16px;
-  font-weight: bold;
-  transition: 400ms;
+  flex-direction: column;
 }
 
-form a:hover {
-  background: #fff;
-  color: #ff5e84;
-  text-decoration: none;
+#cnpj-tel {
+  display: flex;
+  justify-content: space-between;
 }
 
-form button {
-  background: #ffffff22;
-  color: white;
-  width: 150px;
-  height: 40px;
-  border-radius: 6px;
-  cursor: pointer;
-  margin-top: 20px;
-  grid-column: 2;
-  justify-self: end;
-  transition: 400ms;
+.modal-input {
+  width: 100% !important;
 }
 
-form button:hover {
-  background: #fff;
-  color: #ff5e84;
-  text-decoration: none;
-} */
+#frete {
+  min-width: 100px !important;
+  width: 220px !important;
+}
+
+@media (max-width: 917px) {
+  #modal form {
+    margin: 10px auto;
+    width: 80vw;
+    padding: 20px 10px;
+  }
+
+  #modal-title {
+    font-size: 17px !important;
+    text-align: center;
+  }
+}
+
+@media (max-width: 1275px) {
+  #cnpj-tel {
+    flex-direction: column;
+  }
+}
