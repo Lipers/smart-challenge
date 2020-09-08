@@ -52,3 +52,9 @@ ul {
   margin-top: 5px;
   font-size: 13px;
 }
+
+.container-result {
+  padding: 20px;
+  display: flex;
+  justify-content: space-evenly;
+}
